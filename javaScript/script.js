@@ -1,19 +1,14 @@
-const pagina = document.querySelector("html");
-pagina.addEventListener("click", abrirResposta);
+console.log("teste");
 
-function abrirResposta(event) {
-  let local = event.target.id;
-  if (
-    local === "pergunta1" ||
-    local === "pergunta2" ||
-    local === "pergunta3" ||
-    local === "pergunta4" ||
-    local === "pergunta5" ||
-    local === "pergunta6"
-  ) {
-    let pergunta = document.querySelector("dt#" + local);
-    let resposta = document.querySelector("dd#" + local);
-    pergunta.classList.toggle("abrir");
-    resposta.classList.toggle("abrir");
+const links = document.querySelectorAll(".header-menu a");
+
+function ativarLink(link) {
+  const url = location.href;
+  const href = link.href;
+
+  if (url.includes(href)) {
+    link.classList.add("selecionado");
   }
 }
+
+links.forEach(ativarLink);
