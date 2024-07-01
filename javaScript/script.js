@@ -1,5 +1,6 @@
 console.log("teste");
 
+// Ativar os links do Menu superior
 const links = document.querySelectorAll(".header-menu a");
 
 function ativarLink(link) {
@@ -12,3 +13,18 @@ function ativarLink(link) {
 }
 
 links.forEach(ativarLink);
+
+// Seleção de produtos no orçamento
+const parametros = new URLSearchParams(location.search);
+
+function ativarProduto(parametro) {
+  const elemento = document.getElementById(parametro);
+  if (elemento) {
+    elemento.checked = true;
+    console.log(elemento);
+  }
+}
+
+parametros.forEach(ativarProduto);
+
+console.log(parametros);
